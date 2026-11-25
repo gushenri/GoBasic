@@ -1,0 +1,18 @@
+# Arquivos do macOS
+.DS_Store
+
+# Configurações locais e segredos
+.env
+.env.*
+!.env.example
+
+# Executáveis e resultados de testes
+/bin/
+/dist/
+*.exe
+*.test
+*.out
+coverage/
+
+# Executável deste exemplo, caso seja gerado com go build
+/FirstServer/FirstServer
