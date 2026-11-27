@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Lista de Tarefas</title>
+</head>
+<body>
+    <h1>Minha lista de tarefas</h1>
+	<p>Estas são as tarefas que estou aprendendo a mostrar com Go:</p>
+
+    <form action="/tarefas" method="POST">
+        <!-- Ao enviar, o formulário faz um POST para a rota /tarefas do Go. -->
+        <label for="tarefa">Nova Tarefa</label>
+        <input id="tarefa" name="tarefa" type="text" required>
+        <button type="submit">Adicionar</button>
+        <!-- submit envia os dados do formulário ao clicar no botão. -->
+
+
+        <!-- ul cria uma lista sem numeração; cada li representa um item. -->
+		<ul>
+			{{/* Comentários neste formato pertencem ao template Go e não aparecem no HTML enviado. */}}
+			{{/* O ponto representa a lista passada pelo Go; range percorre seus itens. */}}
+			{{range .}}
+			{{/* Dentro do range, o ponto representa o texto da tarefa atual. */}}
+			<li>{{.}}</li>
+			{{/* else mostra o conteúdo abaixo quando a lista está vazia. */}}
+			{{else}}
+			<li>Nenhuma tarefa por enquanto.</li>
+			{{/* end encerra o bloco range. */}}
+			{{end}}
+		</ul>
+
+    </form>
+</body>
+</html>
